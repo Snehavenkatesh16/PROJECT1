@@ -1,3 +1,4 @@
+gunicorn app:app
 from flask import Flask, request, render_template, jsonify
 from werkzeug.utils import secure_filename
 from flask import send_from_directory
@@ -135,3 +136,6 @@ def uploaded_file(filename):
 # ✅ Run the app
 if __name__ == '__main__':
     app.run(debug=True)
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=5000)
+
