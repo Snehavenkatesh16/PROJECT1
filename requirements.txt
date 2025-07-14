@@ -1,6 +1,9 @@
 Flask
 gunicorn
 Werkzeug
+setuptools
+wheel
+
 anyio==4.9.0
 argon2-cffi==23.1.0
 argon2-cffi-bindings==21.2.0
