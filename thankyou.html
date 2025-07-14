@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <title>thankyou</title>
+  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      font-weight: bold;
+      text-align: none;
+      padding: 50px;
+    }
+
+    #thankYou {
+      display: none;
+      margin-top: 30px;
+      text-align: center;
+
+ 
+      animation: fadeIn 0.8s ease-in-out;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to   { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <h2 style="font-size: 14px;">Please help us fight spam by clicking the box below:</h2> 
+  
+
+   
+  <!-- reCAPTCHA widget -->
+  <div class="g-recaptcha" 
+       data-sitekey="6LeLqXorAAAAAIF5_78w168YGzECC-rziS7SHct6" 
+       data-callback="onVerified" 
+       data-expired-callback="onExpired">
+  </div>
+
+  <!-- Thank You Message -->
+  <div id="thankYou">
+  
+    <h3>✅ Thank you for submitting!</h3>
+
+    <p>We've received your form successfully💌.</p>
+    
+  </div>
+
+  <script>
+    function onVerified(token) {
+      // Hide reCAPTCHA and header
+      document.querySelector('.g-recaptcha').style.display = 'none';
+      document.querySelector('h2').style.display = 'none';
+
+      // Show Thank You
+      document.getElementById('thankYou').style.display = 'block';
+    }
+
+    function onExpired() {
+      alert("reCAPTCHA expired 😥 Please try again.");
+    }
+  </script>
+</body>
+</html>

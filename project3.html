@@ -1,0 +1,423 @@
+
+<!DOCTYPE html>
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CVD Risk Calculator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f9;
+      color: #333;
+    }
+    header {
+      background-color: #174ea6;
+      color: white;
+      padding: 2rem;
+      text-align: center;
+    }
+    section {
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 900px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    }
+    h2 {
+      color: #174ea6;
+      margin-bottom: 1rem;
+    }
+    ul {
+      padding-left: 1.2rem;
+    }
+    li {
+      margin-bottom: 0.5rem;
+    }
+    .counter {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #e53935;
+    }
+    .faq {
+      margin-top: 2rem;
+    }
+    .faq h3 {
+      cursor: pointer;
+      color: #444;
+    }
+    .faq p {
+      display: none;
+      margin-top: 0.5rem;
+      color: #666;
+    }
+    .contact-form {
+      margin-top: 2rem;
+    }
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-top: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .contact-form button {
+      margin-top: 1rem;
+      padding: 0.8rem 1.5rem;
+      background-color: #174ea6;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .contact-form button:hover {
+      background-color: #123b82;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🩺 Cardiovascular Disease (CVD) Risk Calculator</h1>
+    <p>Understand your risk and take control of your heart health</p>
+  </header>
+
+  <section id="intro">
+    <h2>Introduction to Cardiovascular Disease</h2>
+    <p>Cardiovascular disease (CVD) includes heart and blood vessel conditions that can lead to heart attacks, strokes, and other serious issues. With early awareness and proactive care, most CVD risks can be managed and reduced significantly.</p>
+  </section>
+
+  <section id="how-it-works">
+    <h2>How the CVD Risk Calculator Works</h2>
+    <p>This tool analyzes personal health metrics such as age, gender, blood pressure, cholesterol levels, smoking status, and more to estimate your risk of developing heart disease over the next 10 years. It’s based on evidence-backed models like the Framingham Risk Score and WHO charts.</p>
+  </section>
+
+  <section id="why-it-matters">
+    <h2>Why Knowing Your Risk Matters</h2>
+    <ul>
+      <li>✔ Take proactive steps to improve heart health</li>
+      <li>✔ Get personalized insights to discuss with your doctor</li>
+      <li>✔ Reduce your risk of heart attacks, strokes, and complications</li>
+      <li>✔ Track your health progress over time</li>
+    </ul>
+  </section>
+
+
+
+  
+  <title>Cardiovascular Disease Risk Calculator</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+    }
+    .container {
+      max-width: 400px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .container h2 {
+      background: #4CAF50;
+      color: white;
+      padding: 10px;
+      margin: -20px -20px 20px;
+      border-radius: 8px 8px 0 0;
+      text-align: center;
+    }
+    label {
+      display: block;
+      margin-top: 10px;
+      font-weight: bold;
+    }
+    input[type="text"],
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+    }
+    .radio-group {
+      margin-top: 5px;
+    }
+    .radio-group input {
+      margin-right: 5px;
+    }
+    .btn {
+      background: #ff5722;
+      color: white;
+      padding: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 5px;
+      margin-top: 15px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+
+
+  <div class="container">
+    <h2>Cardiovascular Disease Risk Calculator</h2>
+    
+    <form id="cvd-form">
+      <label>Select Your Gender</label>
+      <div class="radio-group">
+        <input type="radio" name="gender" value="male" checked=""> Male
+        <input type="radio" name="gender" value="female"> Female
+      </div>
+
+      <label>Enter your age</label>
+      <input type="text" id="age" required="">
+
+      <label>Enter your Systolic Blood Pressure</label>
+      <div class="radio-group">
+        <input type="radio" name="bpTreatment" value="untreated" checked=""> Untreated
+        <input type="radio" name="bpTreatment" value="treated"> Treated
+      </div>
+      <input type="text" id="bp" required="" placeholder="MM HG">
+
+      <label>Enter your HDL cholesterol</label>
+      <input type="text" id="hdl" required="" placeholder="MG/DL">
+
+      <label>Enter your Total cholesterol</label>
+      <input type="text" id="totalChol" required="" placeholder="MG/DL">
+
+      <label>Are you a Smoker?</label>
+      <div class="radio-group">
+        <input type="radio" name="smoker" value="no" checked=""> No
+        <input type="radio" name="smoker" value="yes"> Yes
+      </div>
+
+      <label>Are you a Diabetes Patient?</label>
+      <div class="radio-group">
+        <input type="radio" name="diabetes" value="no" checked=""> No
+        <input type="radio" name="diabetes" value="yes"> Yes
+      </div>
+
+      <label>Select your country (Optional)</label>
+      <select>
+        <option>Select Country</option>
+        <option>India</option>
+        <option>USA</option>
+        <option>UK</option>
+      </select>
+      <select>
+        <option>Select Region</option>
+        <option>Andra pradesh</option>
+        <option>Arunachal Pradesh</option>
+        <option>Assam</option>
+<option>Bihar</option>
+<option>Chhattisgarh</option>
+<option>Goa</option>
+<option>Gujurat</option>
+<option>Haryana</option>
+<option>Himachal Pradesh</option>
+<option>Jharkhand</option>
+<option>Karnataka</option>
+<option>Kerala</option>
+<option>Madhya Pradesh</option>
+<option>Maharashtra</option>
+<option>Manipur</option>
+<option>Meghalaya</option>
+<option>Mizoram</option>
+<option>Nagaland</option>
+<option>Odisha</option>
+<option>Punjab</option>
+<option>Rajasthan</option>
+<option>Sikkim</option>
+<option>Tamil Nadu</option>
+<option>Telangana</option>
+<option>Tripura</option>
+<option>Uttar Pradesh</option>
+<option>Uttarkhand</option>
+<option>West Bengal</option>
+    </select>
+      
+     <button type="button" class="btn" onclick="calculateRisk()">CALCULATE CVD RISK</button>
+
+      <div class="result" id="resultBox"></div>
+    </form>
+  </div>
+
+  <script>
+    function calculateRisk() {
+      const age = parseInt(document.getElementById("age").value);
+      const bp = parseInt(document.getElementById("bp").value);
+      const hdl = parseInt(document.getElementById("hdl").value);
+      const totalChol = parseInt(document.getElementById("totalChol").value);
+      const gender = document.querySelector('input[name="gender"]:checked').value;
+      const bpTreatment = document.querySelector('input[name="bpTreatment"]:checked').value;
+      const smoker = document.querySelector('input[name="smoker"]:checked').value;
+      const diabetes = document.querySelector('input[name="diabetes"]:checked').value;
+
+      if (isNaN(age) || isNaN(bp) || isNaN(hdl) || isNaN(totalChol)) {
+        alert("Please enter valid numeric values.");
+        return;
+      }
+
+      // Simplified risk score formula (placeholder)
+      let risk = age * 0.1 + bp * 0.05 + (totalChol - hdl) * 0.02;
+      if (gender === "male") risk += 5;
+      if (bpTreatment === "treated") risk += 3;
+      if (smoker === "yes") risk += 4;
+      if (diabetes === "yes") risk += 6;
+
+      let resultText = "Estimated CVD Risk Score: " + risk.toFixed(2) + "%";
+      document.getElementById("resultBox").innerText = resultText;
+    }
+  </script>
+
+ <section id="heart-tips">
+<head>
+  <meta charset="UTF-8" />
+  <title>Heart-Health Tips</title>
+</head>
+
+    <h2>Heart Health Tips</h2>
+    <div class="tips-container"> <div class="tip-card"> <h3>📊 Know Your Numbers</h3> <p>Track your blood pressure, cholesterol, blood sugar, and BMI. Early awareness saves lives.</p> </div> <div class="tip-card"> <h3>🥗 Eat Smart</h3> <p>Load up on fruits, veggies, whole grains, and healthy fats. Skip the salt, sugar, and junk food.</p> </div> <div class="tip-card"> <h3>🚶 Move Your Body</h3> <p>Stay active! Aim for 30 minutes a day — walking, biking, dancing, it all counts.</p> </div> <div class="tip-card"> <h3>🚭 Quit Smoking</h3> <p>Smoking damages your heart. Quitting is the best gift you can give yourself.</p> </div> <div class="tip-card"> <h3>🍷 Limit Alcohol</h3> <p>Drink moderately or not at all. Too much alcohol increases your heart risk.</p> </div> <div class="tip-card"> <h3>🧘 Manage Stress</h3> <p>Relax. Practice mindfulness, deep breathing, or anything that helps you stay calm.</p> </div> <div class="tip-card"> <h3>😴 Sleep Well</h3> <p>Get 7–9 hours of sleep each night. Good rest keeps your heart strong.</p> </div> <div class="tip-card"> <h3>💧 Stay Hydrated</h3> <p>Water helps your heart pump blood more easily. Don’t skip your fluids!</p> </div> <div class="tip-card"> <h3>💊 Take Your Meds</h3> <p>Follow your doctor's advice. Never skip prescribed medications.</p> </div> <div class="tip-card"> <h3>🧮 Recheck Your Risk</h3> <p>Your health changes — so should your risk check. Use this calculator regularly!</p> </div> </div>
+    </ul>
+  </section>
+
+
+ <section id="live-counter">
+  <h2>People Who Have Used This Calculator</h2>
+  <p class="counter" id="userCount">789</p>
+</section>
+<script>
+  // Smooth animated counter
+  let count = 0;
+  const target = 789; // You can change this number
+  const counter = document.getElementById("userCount");
+
+  const interval = setInterval(() => {
+    if (count < target) {
+      count += Math.ceil((target - count) / 10); // smooth easing
+      counter.textContent = count.toLocaleString();
+    } else {
+      clearInterval(interval);
+      counter.textContent = target.toLocaleString();
+    }
+  }, 100);
+</script>
+<section>
+<h2>FAQs</h2>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+  <h3><span class="icon">➕</span> Is this calculator a substitute for medical advice?</h3>
+  <p class="faq-answer">This tool offers a general risk estimate and does not replace medical consultation. Always speak with a healthcare provider for personal guidance.</p>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+  <h3><span class="icon">➕</span> What data do I need to use the calculator?</h3>
+  <p class="faq-answer">You’ll need to enter your age, gender, blood pressure, cholesterol levels, smoking status, and diabetes status.</p>
+</div>
+
+<div class="faq-item" onclick="toggleFaq(this)">
+  <h3><span class="icon">➕</span> Can I lower my CVD risk?</h3>
+  <p class="faq-answer">Yes! With diet, exercise, lifestyle changes, and in some cases, medication, most people can significantly reduce their risk.</p>
+</div>
+</section>
+
+<!-- Styles -->
+<style>
+  .faq-item {
+    cursor: pointer;
+    margin-bottom: 10px;
+  }
+
+  .faq-item h3 {
+    margin: 0;
+    display: flex;
+    align-items: center;
+    font-weight: normal;
+  }
+
+  .faq-item .icon {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
+    margin-left: 25px;
+  }
+
+  .faq-item.active .faq-answer {
+    max-height: 200px; /* Adjust based on expected content */
+    opacity: 1;
+  }
+
+  .faq-item.active .icon {
+    content: "➖";
+  }
+</style>
+
+<!-- Script -->
+<script>
+  function toggleFaq(element) {
+    element.classList.toggle('active');
+
+    const icon = element.querySelector('.icon');
+    const isOpen = element.classList.contains('active');
+
+    icon.textContent = isOpen ? '➖' : '➕';
+  }
+</script>
+
+ 
+<section id="contact" class="contact-form">
+  <h2>Contact Us</h2>
+  
+  <form action="/submit" method="POST" enctype="multipart/form-data" id="contactForm">
+
+    <label for="name">Your Name</label>
+    <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+    <label for="email">Your Email</label>
+    <input type="email" id="email" name="email" placeholder="Your Email" required>
+
+    <label for="message">Your Message</label>
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <label for="file">Upload File</label>
+    <input type="file" id="file" name="attachment">
+    <script>
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value.trim();
+  const message = document.getElementById("message").value.trim();
+
+  if (!name || !email || !message) {
+    e.preventDefault();
+    Swal.fire({
+      icon: 'warning',
+      title: 'Oops!',
+      text: 'Please fill in all the fields before submitting.',
+    });
+  }
+});
+
+</script>
+<a href="/thankyou"><button onclick>Send Message</button>
+
+</form>
+     
+
+
+</body>
+</html>
